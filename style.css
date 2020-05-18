@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+
+.etchSketch {
+    background-color: black;
+  
+    width: 50rem;
+    padding: 5rem;
+    border: 5px solid red;
+    float: left;
+}

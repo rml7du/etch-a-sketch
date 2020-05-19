@@ -1,8 +1,9 @@
 const resetValue = 16;
 const resetButton = document.getElementById("resetButton");
-const gridSizeButton = document.getElementById("gridSizeButton");
-const gridSize = document.getElementById("gridSize");
-var redSelect = document.getElementById("red").checked;
+let UserColorValue;
+
+
+
 
 let board = document.querySelector('.container');
 
@@ -16,30 +17,65 @@ function createBoxes(gridSize) {
     }
 }
 
+//----------Black  Button--------------//
+const blackButton = document.getElementById('black');
+blackButton.addEventListener('click', black);
 
-board.addEventListener('mouseover', (e) => { 
-    if (redSelect === true){
-        console.log(redSelect);
-        e.target.style.backgroundColor = 'red';
-    } else {
-    //e.target.setAttribute("class", "etchSketchColor");
-    e.target.style.backgroundColor = 'rgb('+ Math.floor(Math.random() * 256) +','
-    + Math.floor(Math.random() * 256) +','
-    + Math.floor(Math.random() * 256) +')';
-}});
+function black() {
+    board.addEventListener('mouseover', (e) => { 
+        e.target.style.backgroundColor = 'black'
+    });
+}
+
+//----------Gradient Color Button--------------//
+const gradientButton = document.getElementById('gradientColor');
+gradientButton.addEventListener('click', gradient);
+
+function gradient() {
+    board.addEventListener('mouseover', (e) => { 
+        e.target.style.backgroundColor = 'black'
+    });
+}
+
+
+//----------Random Color Button--------------//
+const randomButton = document.getElementById('randomColor');
+randomButton.addEventListener('click', random);
+
+function random() {
+    board.addEventListener('mouseover', (e) => { 
+        e.target.style.backgroundColor = 'rgb('+ Math.floor(Math.random() * 256) +','
+        + Math.floor(Math.random() * 256) +','
+        + Math.floor(Math.random() * 256) +')';
+    });
+}
+
+///----------User Color Button--------------//
+const userColorButton = document.getElementById('userColor');
+userColorButton.addEventListener('click', userColor);
+userColorButton.addEventListener('change', userColor);
+
+
+function userColor() {
+    userColorValue = event.target.value;
+    board.addEventListener('mouseover', (e) => { 
+        e.target.style.backgroundColor = userColorValue;
+    });
+}
 
  
-  //grid Resize (on press enter or click)
-  gridSizeButton.addEventListener('click', resizeGrid);
-  gridSize.addEventListener('keypress', function (e){
-      if (e.keyCode==13){
+//---------grid Resize (on press enter or click)----------//
+const gridSizeButton = document.getElementById("gridSizeButton");
+const gridSize = document.getElementById("gridSize");
+gridSizeButton.addEventListener('click', resizeGrid);
+gridSize.addEventListener('keypress', function (e){
+    if (e.keyCode==13){
         resizeGrid();
-      }
+    }
   } ); 
 
-  function resizeGrid() {
-      board.innerHTML = '';
-
+function resizeGrid() {
+    board.innerHTML = '';
       if (gridSize.value > 64) {
         alert("max size is 64")
     } else {
@@ -47,7 +83,10 @@ board.addEventListener('mouseover', (e) => {
     }
 }
 
+
+
   //Reset Grid
+
   resetButton.addEventListener('click', resetGrid);
 
   function resetGrid(){
@@ -56,3 +95,4 @@ board.addEventListener('mouseover', (e) => {
   }
 
 createBoxes(resetValue);
+black();

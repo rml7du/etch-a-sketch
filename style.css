@@ -5,13 +5,13 @@
 
 .container {
 
-    border: 1px solid black;
+    border: .1px solid lightgrey;
     margin: 15px auto;
     width: 500px;
     height: 500px;
     display: grid;
-    grid-template-rows: repeat(var(--grid-rows), .5fr);
-    grid-template-columns: repeat(var(--grid-rows), .5fr);
+    grid-template-rows: repeat(var(--grid-rows), auto);
+    grid-template-columns: repeat(var(--grid-rows), auto);
     background-color: white;
 }
 
@@ -24,8 +24,9 @@
     background-color: white;
     width: auto;
     height: auto;
-    padding: 5px;
-    border: 1px solid black;
+    
+    border: .02px solid lightgrey;
+    box-sizing: border-box;
 }
 
 h1{

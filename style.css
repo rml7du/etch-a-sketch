@@ -3,36 +3,69 @@
     --grid-rows: 1; 
   }
 
-.container {
+body {
+    background-image: url('../images/cloud.png');
+    background-position: center;
+    background-size: 100% 100%;
+    font-family: "Courier New";
+    margin: 0;
+    height: 100vh;
+}
 
+.container {
     border: .1px solid lightgrey;
-    margin: 15px auto;
-    width: 500px;
-    height: 500px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    width: 450px;
+    height: 450px;
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), auto);
     grid-template-columns: repeat(var(--grid-rows), auto);
     background-color: white;
 }
 
-.main {
-    align-items: center;
+#buttonContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    
+}
+
+.button {
+    border-radius: 10%;
+    background-color: rgb(46, 43, 43);
+    padding: 5px;
+    color: white;
+}
+#userColor {
+    border-radius: 10%;
+    background-color: rgb(46, 43, 43);
+    padding: 1px;
+    color: white;
+    position: relative;
+    top: 3px; 
+}
+#gridSize{
+    width: 35px;
+    border: solid 2.5px;
 }
 
 .etchSketch {
     background-color: white;
     width: auto;
     height: auto;
-    
     border: .02px solid lightgrey;
     box-sizing: border-box;
 }
 
 h1{
     text-align: center;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 2px;
+    margin: 0px;
+    font-size:48px;
 }
 
-.etchSketchColor {
-    background-color: red;
-}

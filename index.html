@@ -7,21 +7,22 @@
 </head>
 
 <body>
-    <div id = "main"> 
-        <h1>Etch-A-Sketch</h1>
-        <button type="button" id = "resetButton">Reset Grid</button>
-        <button type="button" id = "gridSizeButton">New Size Grid</button>
-        <input type = "text" id = "gridSize"></input>
-    </div>
-    <div>
-        <button type="button" id ="black">Black</button>
-        <button type="button" id ="randomColor">Random Color</button>
-        <!--<button type="button" id ="userColor">User Color</button>-->
-        <input type="color" id="userColor" value = "#0000FF"></input>
-        <button type="button" id ="gradientColor">Gradient Color</button>
-    </div>
-    <div class="container">
+    <h1>Etch-A-Sketch</h1>
+    <div id = "buttonContainer">
+        <div> 
+            <button class="button" id = "resetButton">Reset Grid</button>
+            <button class="button" id = "gridSizeButton">New Grid Size -></button>
+            <input class = "text" id = "gridSize"></input>
+    
+            <button class="button" id ="black">Black</button>
+            <button class="button" id ="randomColor">Random Color</button>
+            <input type="color" id="userColor" value = "#00FF00"></input>
+            <button class="button" id ="gradientColor">Gradient</button>
+        </div>
         
     </div>
+    
+    <div class="container"></div>
+
     <script type="text/javascript" src="script.js"></script>
 </body>
